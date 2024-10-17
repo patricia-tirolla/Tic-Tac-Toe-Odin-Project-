@@ -7,14 +7,20 @@ newGameButton.addEventListener("click", () => {
     gameFlow.currentPlayer = gameFlow.player1;
 })
 
+const resetButton = document.getElementById("reset-game-button");
+resetButton.addEventListener("click", () => {
+    Gameboard.cleanBoard();
+    gameFlow.resetScore();
+    updateDisplay();
+})
 
 gameCells.forEach((cell) => {
     cell.addEventListener("click", () => {
-        gameFlow.playerFlow(cell.dataset.index);
-        updateDisplay();
-        updateScore();
-        console.log(Gameboard.myBoard);
-        true;
+        if (!gameFlow.endOfGame()) {
+            gameFlow.playerFlow(cell.dataset.index);
+            updateDisplay();
+            console.log(Gameboard.myBoard);
+        }
     });
 });
 
@@ -23,9 +29,7 @@ function updateDisplay() {
         let player = Gameboard.myBoard[cell.dataset.index];
         cell.textContent = player;
     })
-}
 
-function updateScore() {
     let scoreDisplayX = document.getElementById("display-x");
     let scoreDisplayO = document.getElementById("display-o");
 

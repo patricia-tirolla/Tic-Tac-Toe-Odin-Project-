@@ -22,14 +22,30 @@ function createGameFlow() {
         player2: player2,
 
         playerFlow(dataIndex) {
+            if(this.endOfGame()) {
+                throw new Error("Start a new game!");
+            }
             this.changeIndex(dataIndex);
             if (this.winConditions(this.currentPlayer.name)) {
                 this.increaseScore();
                 this.currentPlayer = player1;
-                alert(`${this.currentPlayer.name} wins!`)
                 return true;
             } 
             this.switchPlayer();
+        },
+
+        endOfGame() {
+            if (this.winConditions(this.player1.name) ||
+            this.winConditions(this.player2.name)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        resetScore() {
+            this.player1.score = 0;
+            this.player2.score = 0;
         },
 
         changeIndex(index) {
@@ -37,10 +53,10 @@ function createGameFlow() {
         },
 
         switchPlayer() {
-            if (this.currentPlayer === player1) {
-                this.currentPlayer = player2;
+            if (this.currentPlayer === this.player1) {
+                this.currentPlayer = this.player2;
             } else {
-                this.currentPlayer = player1;
+                this.currentPlayer = this.player1;
             }
         },
 
