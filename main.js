@@ -20,14 +20,16 @@ function createGameFlow() {
         currentPlayer: player1,
         player1: player1,
         player2: player2,
+
         playerFlow(dataIndex) {
             this.changeIndex(dataIndex);
             if (this.winConditions(this.currentPlayer.name)) {
                 this.increaseScore();
-                Gameboard.cleanBoard();
-            } else {
-                this.switchPlayer();
-            }
+                this.currentPlayer = player1;
+                alert(`${this.currentPlayer.name} wins!`)
+                return true;
+            } 
+            this.switchPlayer();
         },
 
         changeIndex(index) {
@@ -45,7 +47,6 @@ function createGameFlow() {
         increaseScore() {
             if (this.winConditions(this.currentPlayer.name) === true) {
                 this.currentPlayer.score++;
-                Gameboard.cleanBoard();
             }
         },
 

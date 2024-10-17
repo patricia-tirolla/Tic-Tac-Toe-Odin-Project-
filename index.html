@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <script src="tests.js" defer></script>
+    <!-- <script src="tests.js" defer></script> -->
+    <script src="ui.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <h1>TIC TAC TOE</h1>
+    </header>
+    <main>
+        <button class="game-buttons" id="new-game-button">NEW GAME</button>
+        <button class="game-buttons" id="reset-game-button">RESET GAME</button>
+        <section id="score-display-container">
+            <div class="score-container" id="x-score-container">
+                <p>Score x:</p>
+                <div id="display-x" class="score-display"></div>
+            </div>
+            <div class="score-container" id="o-score-container">
+                <p>Score o:</p>
+                <div id="display-o" class="score-display"></div>
+            </div>
+        </section>
+        <div id="div-container">
+            <div class="game-cell" data-index="0"></div>
+            <div class="game-cell" data-index="1"></div>
+            <div class="game-cell" data-index="2"></div>
+            <div class="game-cell" data-index="3"></div>
+            <div class="game-cell" data-index="4"></div>
+            <div class="game-cell" data-index="5"></div>
+            <div class="game-cell" data-index="6"></div>
+            <div class="game-cell" data-index="7"></div>
+            <div class="game-cell" data-index="8"></div>
+        </div>
+    </main>
 </body>
+
 </html>
