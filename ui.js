@@ -16,10 +16,18 @@ resetButton.addEventListener("click", () => {
 
 gameCells.forEach((cell) => {
     cell.addEventListener("click", () => {
+        cell.style.color = "black";
         if (!gameFlow.endOfGame()) {
             gameFlow.playerFlow(cell.dataset.index);
             updateDisplay();
             console.log(Gameboard.myBoard);
+        }
+
+        if(gameFlow.getWinningCombination()) {
+            gameFlow.getWinningCombination().forEach(index => {
+                const winningCell = document.querySelector(`[data-index='${index}']`);
+                winningCell.style.color = "red";
+            })
         }
     });
 });

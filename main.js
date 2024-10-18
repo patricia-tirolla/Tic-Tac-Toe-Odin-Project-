@@ -16,13 +16,27 @@ function createPlayer(name) {
 function createGameFlow() {
     const player1 = createPlayer("x");
     const player2 = createPlayer("o");
+
+    const winningCombinations = [
+        [0, 1, 2], // Top row
+        [3, 4, 5], // Middle row
+        [6, 7, 8], // Bottom row
+        [0, 3, 6], // Left column
+        [1, 4, 7], // Middle column
+        [2, 5, 8], // Right column
+        [0, 4, 8], // Diagonal from top-left
+        [2, 4, 6]  // Diagonal from top-right
+    ];
+
     return {
         currentPlayer: player1,
         player1: player1,
         player2: player2,
 
+        winningCombination: winningCombinations,
+
         playerFlow(dataIndex) {
-            if(this.endOfGame()) {
+            if (this.endOfGame()) {
                 throw new Error("Start a new game!");
             }
             this.changeIndex(dataIndex);
@@ -30,13 +44,13 @@ function createGameFlow() {
                 this.increaseScore();
                 this.currentPlayer = player1;
                 return true;
-            } 
+            }
             this.switchPlayer();
         },
 
         endOfGame() {
             if (this.winConditions(this.player1.name) ||
-            this.winConditions(this.player2.name)) {
+                this.winConditions(this.player2.name)) {
                 return true;
             } else {
                 return false;
@@ -61,7 +75,7 @@ function createGameFlow() {
         },
 
         increaseScore() {
-            if (this.winConditions(this.currentPlayer.name) === true) {
+            if (this.winConditions(this.currentPlayer.name)) {
                 this.currentPlayer.score++;
             }
         },
@@ -103,6 +117,16 @@ function createGameFlow() {
                 return true;
             } else {
                 return false;
+            }
+        },
+
+        getWinningCombination() {
+            for (let combination of winningCombinations) {
+                if (
+                    (combination.every(index => Gameboard.myBoard[index] === (this.player1.name))) ||
+                    (combination.every(index => Gameboard.myBoard[index] === (this.player2.name)))
+                )
+                    return combination;
             }
         }
     }
