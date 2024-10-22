@@ -42,7 +42,7 @@ function createGameFlow() {
             this.changeIndex(dataIndex);
             if (this.winConditions(this.currentPlayer.name)) {
                 this.increaseScore();
-                this.currentPlayer = player1;
+                // this.currentPlayer = player1;
                 return true;
             }
             this.switchPlayer();

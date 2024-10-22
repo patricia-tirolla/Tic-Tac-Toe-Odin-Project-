@@ -4,7 +4,7 @@ const newGameButton = document.getElementById("new-game-button");
 newGameButton.addEventListener("click", () => {
     Gameboard.cleanBoard();
     updateDisplay();
-    gameFlow.currentPlayer = gameFlow.player1;
+    // gameFlow.currentPlayer = gameFlow.player1;
 })
 
 const resetButton = document.getElementById("reset-game-button");
