@@ -38,34 +38,48 @@ p {
     display: flex;
     justify-content: center;
     gap: 20px;
-    width:100vw;
+    width: 100vw;
 }
 
 .game-buttons {
     height: fit-content;
     padding: 20px 20px;
     border-radius: 10px;
+    border: solid 1px gray;
+}
+
+.game-buttons:hover {
+    font-size: small;
+    cursor: pointer;
 }
 
 #score-display-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
     width: 100vw;
+    border: solid 1px gray;
+    border-radius: 8px;
+    width: fit-content;
+    gap: 10px;
+    padding: 5px;
 }
 
-.score-container {
-    height: fit-content;
-    border: solid 1px black;
-    padding: 5px 30px;
-    border-radius: 8px;
+.player-input {
+    border: none;
+    width: 80px;
+    font-size: medium;
 }
 
 .score-display {
-    background-color: rgb(196, 210, 196);
+    display: flex;
+    background-color: rgb(213, 226, 213);
     height: 30px;
     border-radius: 8px;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    font-size: 2em;
 }
 
 #game-board {
@@ -80,8 +94,13 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
-    border: solid 1px black;
+    border: solid 1px gray;
     background-color: rgb(203, 154, 154);
     border-radius: 10px;
     font-size: 3em;
+}
+
+.game-cell:hover {
+    background-color: rgb(186, 138, 138);
+    cursor: pointer;
 }

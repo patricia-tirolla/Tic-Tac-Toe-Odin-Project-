@@ -24,14 +24,11 @@
             <button class="game-buttons" id="reset-game-button">RESET GAME</button>
         </div>
         <section id="score-display-container">
-            <div class="score-container" id="x-score-container">
-                <p>Score x:</p>
-                <div id="display-x" class="score-display"></div>
-            </div>
-            <div class="score-container" id="o-score-container">
-                <p>Score o:</p>
-                <div id="display-o" class="score-display"></div>
-            </div>
+            <input class="player-input" type="text" placeholder="Player 1"></input>
+            <div id="display-x" class="score-display"></div>
+
+            <input class="player-input" type="text" placeholder="Player 2"></input>
+            <div id="display-o" class="score-display"></div>
         </section>
         <div id="game-board">
             <div class="game-cell" data-index="0"></div>
@@ -45,7 +42,7 @@
             <div class="game-cell" data-index="8"></div>
         </div>
         <template id="winner-template">
-                <p id="winner-message"></p>
+            <p id="winner-message"></p>
         </template>
     </main>
 </body>
