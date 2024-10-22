@@ -1,1 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/M86k1AmL)
+# Tic-Tac-Toe - JavaScript Projec
+
+> [!NOTE]
+> This is a study project for programing course (Hyper Island).
+
+This project is tic-tac-toe gaming, my first project using Factory Functions.
+
+## Live Preview
+
+The website is published on [GitHub pages](https://patricia-tirolla.github.io/Tic-Tac-Toe-Project/)
